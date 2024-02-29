@@ -7,8 +7,24 @@ module.exports = {
     new: newWine,
     create,
 	delete: deleteOne,
-    edit
+    edit,
+	update
 }
+
+async function update(req, res) {
+	try {
+	  const updatedWine = await WineModel.findOneAndUpdate(
+		{ _id: req.params.id }, // Find wine by ID
+		req.body, // Update object with new properties
+		{ new: true } // Options object to return the updated document
+	  );
+	  return res.redirect('/wines'); // Redirect to the updated wine page
+	} catch (err) {
+	  console.log(err.message);
+	  return res.redirect('/wines');
+	}
+  }
+
 
 async function edit(req, res) {
 	try {

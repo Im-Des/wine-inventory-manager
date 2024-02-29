@@ -17,4 +17,6 @@ router.delete('/:id', wineCtrl.delete)
 
 router.get('/:id/edit', wineCtrl.edit)
 
+router.put('/:id', wineCtrl.update)
+
 module.exports = router;
