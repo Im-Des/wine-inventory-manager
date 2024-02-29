@@ -1,0 +1,54 @@
+<!-- views/edit_wine.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Wine</title>
+</head>
+<body>
+    <h1>Edit Wine</h1>
+    <form action="/wines/<%= wine._id %>?_method=PUT" method="POST">
+        <label>Name:
+            <input type="text" name="name" value="<%= wine.name %>" required>
+        </label><br>
+        <label>Vintage:
+            <input type="number" name="vintage" value="<%= wine.vintage %>">
+        </label><br>
+        <label>Varietal:
+            <input type="text" name="varietal" value="<%= wine.varietal %>">
+        </label><br>
+        <label>Wine Type:
+            <select name="wineType" required>
+                <option value="red" <%= wine.wineType === 'red' ? 'selected' : '' %>>Red</option>
+                <option value="white" <%= wine.wineType === 'white' ? 'selected' : '' %>>White</option>
+                <option value="sparkling" <%= wine.wineType === 'sparkling' ? 'selected' : '' %>>Sparkling</option>
+                <option value="dessert" <%= wine.wineType === 'dessert' ? 'selected' : '' %>>Dessert</option>
+                <option value="rose" <%= wine.wineType === 'rose' ? 'selected' : '' %>>Rosé</option>
+                <option value="fortified" <%= wine.wineType === 'fortified' ? 'selected' : '' %>>Fortified</option>
+            </select>
+        </label><br>
+        <label>Country:
+            <select name="country" required>
+                <option value="France" <%= wine.country === 'France' ? 'selected' : '' %>>France</option>
+                <option value="Italy" <%= wine.country === 'Italy' ? 'selected' : '' %>>Italy</option>
+                <option value="Spain" <%= wine.country === 'Spain' ? 'selected' : '' %>>Spain</option>
+                <option value="USA" <%= wine.country === 'USA' ? 'selected' : '' %>>USA</option>
+                <option value="Chile" <%= wine.country === 'Chile' ? 'selected' : '' %>>Chile</option>
+                <option value="Australia" <%= wine.country === 'Australia' ? 'selected' : '' %>>Australia</option>
+                <option value="South Africa" <%= wine.country === 'South Africa' ? 'selected' : '' %>>South Africa</option>
+                <option value="Germany" <%= wine.country === 'Germany' ? 'selected' : '' %>>Germany</option>
+                <option value="Argentina" <%= wine.country === 'Argentina' ? 'selected' : '' %>>Argentina</option>
+                <option value="Portugal" <%= wine.country === 'Portugal' ? 'selected' : '' %>>Portugal</option>
+                <option value="New Zealand" <%= wine.country === 'New Zealand' ? 'selected' : '' %>>New Zealand</option>
+                <option value="Other" <%= wine.country === 'Other' ? 'selected' : '' %>>Other</option>
+            </select>
+        </label><br>
+        <label>Quantity:
+            <input type="number" name="quantity" value="<%= wine.quantity %>">
+        </label><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

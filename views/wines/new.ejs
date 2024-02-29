@@ -1,0 +1,53 @@
+
+		<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Wine</title>
+</head>
+<body>
+    <h1>Add New Wine</h1>
+    <form action="/wines" method="post">
+        <label>Name:
+            <input type="text" name="name" required>
+        </label><br>
+        <label>Vintage:
+            <input type="number" name="vintage">
+        </label><br>
+        <label>Varietal:
+            <input type="text" name="varietal">
+        </label><br>
+        <label>Wine Type:
+            <select name="wineType" required>
+                <option value="red">Red</option>
+                <option value="white">White</option>
+                <option value="sparkling">Sparkling</option>
+                <option value="dessert">Dessert</option>
+                <option value="rose">Rosé</option>
+                <option value="fortified">Fortified</option>
+            </select>
+        </label><br>
+        <label>Country:
+            <select name="country" required>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="USA">USA</option>
+                <option value="Chile">Chile</option>
+                <option value="Australia">Australia</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Germany">Germany</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Portugal">Portugal</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Other">Other</option>
+            </select>
+        </label><br>
+        <label>Quantity:
+            <input type="number" name="quantity" value="1">
+        </label><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
