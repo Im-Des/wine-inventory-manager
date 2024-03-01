@@ -1,10 +1,9 @@
-<!-- views/wines.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Wine List</title>
 </head>
 <body>
@@ -20,7 +19,7 @@
               <strong>Quantity:</strong> <%= wine.quantity %><br>
               
               <form action="/wines/<%= wine._id %>?_method=DELETE" method="POST">
-                  <input type="hidden" name="wineId" value="<%= wine._id %>">
+              
                   <button type="submit">Delete Wine</button>
               <a href="/wines/<%= wine._id %>/edit">Edit Wine</a>
               </form>

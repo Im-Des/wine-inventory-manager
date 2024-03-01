@@ -1,10 +1,9 @@
-<!-- views/edit_wine.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Edit Wine</title>
 </head>
 <body>
@@ -50,5 +49,23 @@
         </label><br>
         <button type="submit">Submit</button>
     </form>
+    <form method="POST" action="/wines/<%= wine._id %>/reviews">
+        <label>Review:</label>
+        <textarea name="content"></textarea>
+        <input type="submit" value="Add Review">
+    </form>
+    <tbody>
+        <% wine.reviews.forEach(function(r) { %>
+            <tr>
+                <td>
+                    <%= r.userName %>
+                </td>
+                <td>
+                    <%= r.createdAt.toLocaleDateString() %>
+                </td>
+                <td>
+                    <%= r.content %>
+            <% }); %>
+    </tbody>
 </body>
 </html>

@@ -5,6 +5,20 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 
+const reviewSchema = new Schema({
+    content: {
+      type: String,
+      required: true
+    },
+    // One to many relationship on the belongs to side
+    user: {
+      type: Schema.Types.ObjectId, // this is from mongoose
+      ref: 'User' // this references this line mongoose.model('User', userSchema);
+    },
+    userName: String,
+  }, {
+    timestamps: true
+  })
 
 // when we use embedding we define the schemas of the relationship in the same file
 // Referencing (each data entity) gets its own model file
@@ -27,7 +41,7 @@ const wineSchema = new Schema({
         type: Number,
         default: 1
     },
-
+    reviews: [reviewSchema]
    
   });
       

@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo');
 
 const indexRouter = require('./routes/index');
 const wineRouter = require('./routes/wine');
+const reviewsRouter = require('./routes/reviews')
 
 
 // create the Express app
@@ -58,6 +59,7 @@ app.use(function (req, res, next) {
 // MOUNT ROUTES HERE
 app.use('/', indexRouter);
 app.use('/wines', wineRouter)
+app.use('/', reviewsRouter)
 
 
 // invalid request, send 404 page
