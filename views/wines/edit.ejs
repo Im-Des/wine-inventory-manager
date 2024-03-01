@@ -50,9 +50,9 @@
         <button type="submit">Submit</button>
     </form>
     <form method="POST" action="/wines/<%= wine._id %>/reviews">
-        <label>Review:</label>
+        <label>Tasting Notes:</label>
         <textarea name="content"></textarea>
-        <input type="submit" value="Add Review">
+        <input type="submit" value="Add">
     </form>
     <tbody>
         <% wine.reviews.forEach(function(r) { %>
